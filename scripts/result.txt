@@ -1,0 +1,31 @@
+cifar10 edm model unclass-conditional:
+	mpiexec -n 4 python edm_train.py --attention_resolutions 16 --class_cond False --use_scale_shift_norm True --dropout 0.1 --ema_rate 0.999,0.9999,0.9999432189950708 --global_batch_size 512 --image_size 32 --lr 0.0001 --num_channels 128 --num_head_channels 64 --num_res_blocks 3 --resblock_updown True --schedule_sampler lognormal --use_fp16 True --weight_decay 0.0 --weight_schedule karras --data_dir /home/yiquan/consistency_models/data/cifar10/cifar_train
+	/home/yiquan/consistency_models/results/train_cifar10/openai-2023-06-27-21-00-56-216763
+	model10000:fid5.54703,
+	model55000:fid7.42381,
+	model20000:fid7.89281,
+	model15000:fid5.82977,
+	model08000:fid5.20523,
+	model05000:fid8.08285,
+	ema_0.999_100000:fid3.64309,
+	ema_0.9999_080000:fid3.5769,
+	ema_0.9999_100000:fid3.2692,
+	ema_0.9999_120000:fid3.32896,
+	ema_0.9999432189950708_100000:8.97442
+	
+cifar10 edm model consistency distillation unclass-conditional:
+	/home/yiquan/consistency_models/results/train_cifar10/openai-2023-06-27-10-22-26-098951	
+	fid:10
+	/home/yiquan/consistency_models/results/train_cifar10/openai-2023-07-12-00-04-10-431848
+	target_model_090000:fid6.64956
+	ema_0.9999_090000:fid6.55913
+	ema_0.9999_100000:fid6.63561
+	ema_0.9999_080000:fid6.78524
+
+
+distillation on official edm model:
+	1. /home/yiquan/consistency_models/results/train_cifar10/openai-2023-09-12-22-48-44-362450
+	
+
+
+
